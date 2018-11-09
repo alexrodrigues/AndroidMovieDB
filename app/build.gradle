@@ -10,8 +10,8 @@ android {
         applicationId "br.com.rodriguesalex.moviedb"
         minSdkVersion 19
         targetSdkVersion 28
-        buildConfigField("String", "API_URL", '"https://api.themoviedb.org/3/movie/"')
-        buildConfigField("String", "API_KEY", '"be3030a4c1560f39ca8452513497e070"')
+        buildConfigField("String", "API_URL", '"https://api.themoviedb.org"')
+        buildConfigField("String", "API_KEY", '"7e070be3030a4c1560f39ca845251349"')
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -33,6 +33,7 @@ dependencies {
 
     implementation "com.squareup.retrofit2:converter-gson:$gson_converter_version"
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.github.bumptech.glide:glide:$glide_version"
     implementation "com.google.code.gson:gson:$gson_version"
     implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"

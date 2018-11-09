@@ -13,8 +13,8 @@ class MovieRepository {
         val api: IApi = Api().createAdapter()
         val firstPage = 1
         api.getMovies(BuildConfig.API_KEY, firstPage)
-                .observeOn(Schedulers.io())
-                .subscribeOn(AndroidSchedulers.mainThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
                 .subscribe({response ->
                     response.results?.let { movieList ->
                         val viewModelList = ArrayList<MovieViewModel>()
@@ -24,7 +24,7 @@ class MovieRepository {
                         callback.didFetchMovies(viewModelList)
                     }
                 }, {
-                    callback.didFail()
+                    callback.didFail(it.localizedMessage)
                 })
     }
 

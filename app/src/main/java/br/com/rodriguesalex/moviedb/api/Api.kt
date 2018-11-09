@@ -24,7 +24,7 @@ class Api {
         }
     }
 
-    fun createRetrofit(): Retrofit {
+    private fun createRetrofit(): Retrofit {
         val gson = GsonBuilder()
                 .create()
 

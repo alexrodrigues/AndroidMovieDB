@@ -7,7 +7,7 @@ import rx.Observable
 
 interface IApi {
 
-    @GET("/popular")
+    @GET("/3/movie/popular")
     fun getMovies(@Query("api_key") apiKey: String,
                     @Query("page") page: Int): Observable<MDbResponse>
 
